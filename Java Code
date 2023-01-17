@@ -1,0 +1,10 @@
+function highlight() {
+  var text = document.getElementById("textbox").value;
+  var words = text.split(" ");
+  for (var i = 0; i < words.length; i++) {
+    if (words[i] == "American") {
+      words[i] = "<span style='color:red'>" + words[i] + "(<span style='color:green'>replace American with U.S. Citizen</span>)</span>";
+    }
+  }
+  document.getElementById("textbox").innerHTML = words.join(" ");
+}
