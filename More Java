@@ -1,0 +1,14 @@
+document.getElementById("enter-button").addEventListener("click", function() {
+  var text = document.getElementById("textbox").value;
+  var wordsToCheck = ["American"];
+  var suggestions = {"American": "U.S. Citizen"};
+  var newText = text;
+
+  for (var i = 0; i < wordsToCheck.length; i++) {
+    var currentWord = wordsToCheck[i];
+    var re = new RegExp(currentWord, "g");
+    newText = newText.replace(re, "<span style='color: red'>" + currentWord + "</span> (<span style='color: green'>" + suggestions[currentWord] + "</span>)");
+  }
+
+  document.getElementById("textbox").innerHTML = newText;
+});
